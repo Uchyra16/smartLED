@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "led_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,18 +92,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim3);
-  uint8_t test[40 + 8 * 24 + 1] = {0};
-  // Zerowanie kolorów wszystkich diod
-  for (int i = 0; i < 8 * 24; i++)
-    test[40 + i] = 32;
-
-  // Wyłącz jedną diodę
-  // test[40] = 32;
-
-  // Stan wysoki na końcu
-  test[40 + 8 * 24] = 100;
-  HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, &test, sizeof(test));
+  led_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
