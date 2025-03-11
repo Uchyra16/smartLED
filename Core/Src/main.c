@@ -102,7 +102,51 @@ int main(void)
   first_led_color.red = 0;
   first_led_color.blue = 0;
 
+  led_color_t second_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t third_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t fourth_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t fifth_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t sixth_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t seventh_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+  led_color_t eightth_led_color;
+  second_led_color.green = 1;
+  second_led_color.red = 0;
+  second_led_color.blue = 0;
+
+
+
   led_setDiodeColor(0, first_led_color);
+  led_setDiodeColor(1, second_led_color);
+  led_setDiodeColor(2, third_led_color);
+  led_setDiodeColor(3, fourth_led_color);
+  led_setDiodeColor(4, fifth_led_color);
+  led_setDiodeColor(5, sixth_led_color);
+  led_setDiodeColor(6, seventh_led_color);
+  led_setDiodeColor(7, eightth_led_color);
   led_update();
 
   /* USER CODE END 2 */
@@ -111,8 +155,27 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  first_led_color.green = 1;
+	  first_led_color.red = 0;
+	  first_led_color.blue = 0;
+	  second_led_color.green = 1;
+	  second_led_color.red = 0;
+	  second_led_color.blue = 0;
+	  led_setDiodeColor(0, first_led_color);
+	  led_setDiodeColor(1, second_led_color);
 	  led_update();
-	  HAL_Delay(100);
+	  HAL_Delay(200);
+
+	  first_led_color.green = 0;
+	  first_led_color.red = 0;
+	  first_led_color.blue = 0;
+	  second_led_color.green = 0;
+	  second_led_color.red = 0;
+	  second_led_color.blue = 0;
+	  led_setDiodeColor(0, first_led_color);
+	  led_setDiodeColor(1, second_led_color);
+	  led_update();
+	  HAL_Delay(200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

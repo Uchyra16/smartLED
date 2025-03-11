@@ -1,3 +1,3 @@
 ../Core/Src/led_control.c:16:6:led_init	24	static
-../Core/Src/led_control.c:26:6:led_setDiodeColor	16	static
-../Core/Src/led_control.c:54:6:led_update	8	static
+../Core/Src/led_control.c:26:6:led_setDiodeColor	24	static
+../Core/Src/led_control.c:60:6:led_update	8	static

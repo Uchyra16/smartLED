@@ -28,6 +28,11 @@ void led_setDiodeColor(int16_t diode_id, led_color_t color)
 	if(diode_id >= NUMBER_OF_LEDS-1 || diode_id < 0) return;
 	led_array[diode_id] = color;
 
+	for(int i = 40+24*diode_id; i < 40+24*diode_id+24; i++)
+	{
+		buffer[i] = ZERO;
+	}
+
 	if(color.green == 1)
 	{
 		buffer[40+24*diode_id] = ONE;
@@ -46,6 +51,7 @@ void led_setDiodeColor(int16_t diode_id, led_color_t color)
 		buffer[48+24*diode_id] = ZERO;
 		buffer[56+24*diode_id] = ONE;
 	}
+
 
 
 
