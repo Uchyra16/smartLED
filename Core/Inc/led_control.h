@@ -19,8 +19,8 @@
 #define INC_LED_CONTROL_H_
 
 #define NUMBER_OF_LEDS 8
-#define ZERO 0b11100000
-#define ONE 0b11110000
+#define ZERO 0b100000
+#define ONE 0b111000
 
 typedef struct {
 	uint8_t red, green, blue;
