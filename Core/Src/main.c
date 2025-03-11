@@ -98,11 +98,11 @@ int main(void)
   led_init(&hspi1);
 
   led_color_t first_led_color;
-  first_led_color.green = 0;
-  first_led_color.red = 1;
+  first_led_color.green = 1;
+  first_led_color.red = 0;
   first_led_color.blue = 0;
 
-  led_setDiodeColor(3, first_led_color);
+  led_setDiodeColor(0, first_led_color);
   led_update();
 
   /* USER CODE END 2 */

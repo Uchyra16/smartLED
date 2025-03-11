@@ -572,7 +572,7 @@ void led_setDiodeColor(int16_t diode_id, led_color_t color)
  8000626:	00db      	lsls	r3, r3, #3
  8000628:	3328      	adds	r3, #40	; 0x28
  800062a:	4a32      	ldr	r2, [pc, #200]	; (80006f4 <led_setDiodeColor+0x114>)
- 800062c:	2138      	movs	r1, #56	; 0x38
+ 800062c:	213c      	movs	r1, #60	; 0x3c
  800062e:	54d1      	strb	r1, [r2, r3]
 		buffer[48+24*diode_id] = ZERO;
  8000630:	f9b7 2006 	ldrsh.w	r2, [r7, #6]
@@ -619,7 +619,7 @@ void led_setDiodeColor(int16_t diode_id, led_color_t color)
  800067e:	00db      	lsls	r3, r3, #3
  8000680:	3330      	adds	r3, #48	; 0x30
  8000682:	4a1c      	ldr	r2, [pc, #112]	; (80006f4 <led_setDiodeColor+0x114>)
- 8000684:	2138      	movs	r1, #56	; 0x38
+ 8000684:	213c      	movs	r1, #60	; 0x3c
  8000686:	54d1      	strb	r1, [r2, r3]
 		buffer[56+24*diode_id] = ZERO;
  8000688:	f9b7 2006 	ldrsh.w	r2, [r7, #6]
@@ -666,7 +666,7 @@ void led_setDiodeColor(int16_t diode_id, led_color_t color)
  80006d6:	00db      	lsls	r3, r3, #3
  80006d8:	3338      	adds	r3, #56	; 0x38
  80006da:	4a06      	ldr	r2, [pc, #24]	; (80006f4 <led_setDiodeColor+0x114>)
- 80006dc:	2138      	movs	r1, #56	; 0x38
+ 80006dc:	213c      	movs	r1, #60	; 0x3c
  80006de:	54d1      	strb	r1, [r2, r3]
  80006e0:	e000      	b.n	80006e4 <led_setDiodeColor+0x104>
 	if(diode_id >= NUMBER_OF_LEDS-1 || diode_id < 0) return;
@@ -749,19 +749,19 @@ int main(void)
  800073c:	f7ff ff32 	bl	80005a4 <led_init>
 
   led_color_t first_led_color;
-  first_led_color.green = 0;
- 8000740:	2300      	movs	r3, #0
+  first_led_color.green = 1;
+ 8000740:	2301      	movs	r3, #1
  8000742:	717b      	strb	r3, [r7, #5]
-  first_led_color.red = 1;
- 8000744:	2301      	movs	r3, #1
+  first_led_color.red = 0;
+ 8000744:	2300      	movs	r3, #0
  8000746:	713b      	strb	r3, [r7, #4]
   first_led_color.blue = 0;
  8000748:	2300      	movs	r3, #0
  800074a:	71bb      	strb	r3, [r7, #6]
 
-  led_setDiodeColor(3, first_led_color);
+  led_setDiodeColor(0, first_led_color);
  800074c:	6879      	ldr	r1, [r7, #4]
- 800074e:	2003      	movs	r0, #3
+ 800074e:	2000      	movs	r0, #0
  8000750:	f7ff ff46 	bl	80005e0 <led_setDiodeColor>
   led_update();
  8000754:	f7ff ffd0 	bl	80006f8 <led_update>

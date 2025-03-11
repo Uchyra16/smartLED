@@ -20,7 +20,7 @@
 
 #define NUMBER_OF_LEDS 8
 #define ZERO 0b100000
-#define ONE 0b111000
+#define ONE 0b111100
 
 typedef struct {
 	uint8_t red, green, blue;
